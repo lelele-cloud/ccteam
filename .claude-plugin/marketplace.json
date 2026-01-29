@@ -1,0 +1,18 @@
+{
+  "name": "ccteam",
+  "description": "将Claude Code转变为互联网大厂开发团队 - 15个专业角色智能体，10阶段工作流引擎",
+  "owner": {
+    "name": "lelele-cloud"
+  },
+  "plugins": [
+    {
+      "name": "ccteam",
+      "description": "将Claude Code转变为互联网大厂开发团队 - 15个专业角色智能体，10阶段工作流引擎",
+      "version": "2.1.0",
+      "source": "./",
+      "author": {
+        "name": "lelele-cloud"
+      }
+    }
+  ]
+}
