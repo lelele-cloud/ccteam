@@ -2,6 +2,32 @@
 
 将 Claude Code 转变为一支完整的互联网大厂开发团队，包含15个专业角色智能体，遵循标准软件开发流程。
 
+## 安装
+
+在 Claude Code 中运行：
+
+```bash
+# 1. 添加 marketplace
+/plugin
+# 选择 "Add marketplace" → 输入: https://github.com/lelele-cloud/ccteam.git
+
+# 2. 安装插件
+/plugin
+# 选择 "Install" → 选择 "ccteam"
+
+# 3. 重启 Claude Code
+```
+
+或者直接安装（如果已添加 marketplace）：
+```bash
+/plugin install ccteam
+```
+
+## v2.2 新特性
+
+- **斜杠命令自动补全**：输入 `/cc` 即可看到所有 ccteam 命令的自动补全建议
+- **20个快捷命令**：直接调用团队角色和功能
+
 ## v2.1 新特性
 
 - **智能体智能度大幅提升**：所有15个角色从基础定义(50-70行)升级到高智能度定义(300-400行)
@@ -34,57 +60,53 @@
 
 ## 快速开始
 
-### 安装
-
-将本插件目录放置于 Claude Code 的 skills 目录下。
-
-### 使用
+### 主入口
 
 ```bash
-# 启动新项目
-/ccteam-new
+/ccteam              # 主入口，选择新项目或新功能开发
+```
 
-# 添加新功能
-/ccteam-feature
+### 项目命令
 
-# 查看项目状态
-/ccteam-status
-
-# 恢复项目
-/ccteam-resume
-
-# 配置设置
-/ccteam-config
-
-# 阶段控制（v2.0新增）
-/ccteam-stage start|complete|skip|rollback|status
+```bash
+/ccteam-new          # 启动新项目开发（从0到1完整流程）
+/ccteam-feature      # 添加新功能（增量开发）
+/ccteam-status       # 查看项目状态
+/ccteam-resume       # 恢复中断的项目
 ```
 
 ### 调用特定角色
 
 ```bash
-# 产品经理
-/ccteam-pm
-
-# 技术负责人
-/ccteam-tech-lead
-
-# 架构师
-/ccteam-architect
-
-# 前端工程师
-/ccteam-frontend
-
-# 后端工程师
-/ccteam-backend
-
-# 更多角色...
+/ccteam-pm           # 产品经理
+/ccteam-pmo          # 项目经理
+/ccteam-tl           # 技术负责人
+/ccteam-arch         # 系统架构师
+/ccteam-ui           # UI设计师
+/ccteam-ux           # UX设计师
+/ccteam-fe           # 前端工程师
+/ccteam-be           # 后端工程师
+/ccteam-api          # API工程师
+/ccteam-qa           # 测试工程师
+/ccteam-ops          # DevOps工程师
+/ccteam-dba          # DBA
+/ccteam-sec          # 安全工程师
+/ccteam-doc          # 文档工程师
+/ccteam-cr           # 代码审查员
 ```
 
 ## 目录结构
 
 ```
 ccteam/
+├── .claude-plugin/            # 插件配置
+│   ├── plugin.json           # 插件元数据
+│   └── marketplace.json      # Marketplace配置
+├── commands/                  # 斜杠命令定义（v2.2新增）
+│   ├── ccteam.md
+│   ├── ccteam-pm.md
+│   ├── ccteam-fe.md
+│   └── ...
 ├── agents/                    # 智能体定义
 │   ├── product-manager/       # 产品经理
 │   ├── project-manager/       # 项目经理
@@ -101,60 +123,28 @@ ccteam/
 │   ├── security-engineer/    # 安全工程师
 │   ├── doc-engineer/         # 文档工程师
 │   ├── code-reviewer/        # 代码审查员
-│   ├── permissions.md        # 权限矩阵 (v2.0)
-│   ├── collaboration-rules.md # 协作规则 (v2.0)
-│   └── scenario-guides/      # 场景指南 (v2.0)
+│   ├── permissions.md        # 权限矩阵
+│   ├── collaboration-rules.md # 协作规则
+│   └── scenario-guides/      # 场景指南
 ├── skills/                    # 技能定义
 │   ├── entry/                # 入口技能
-│   ├── workflow/             # 工作流技能 (v2.0)
-│   │   ├── engine.md         # 流程引擎
-│   │   ├── stage-control.md  # 阶段控制
-│   │   └── review-gate.md    # 评审门禁
-│   ├── requirements/         # 需求技能 (v2.0)
-│   │   ├── analyze-requirement.md
-│   │   ├── write-prd.md
-│   │   └── write-user-story.md
-│   ├── architecture/         # 架构技能 (v2.0)
-│   │   ├── system-design.md
-│   │   └── tech-selection.md
-│   ├── development/          # 开发技能 (v2.0)
-│   │   ├── code-implementation.md
-│   │   └── code-review.md
-│   ├── testing/              # 测试技能 (v2.0)
-│   │   ├── test-planning.md
-│   │   └── test-execution.md
+│   ├── workflow/             # 工作流技能
+│   ├── requirements/         # 需求技能
+│   ├── architecture/         # 架构技能
+│   ├── development/          # 开发技能
+│   ├── testing/              # 测试技能
 │   └── agents/               # 角色快捷技能
-├── schemas/                   # JSON Schema (v2.0)
+├── schemas/                   # JSON Schema
 │   └── project-status.schema.json
 ├── workflows/                 # 工作流定义
-│   ├── engine.md             # 流程引擎
-│   └── stages/               # 10个阶段定义
-├── templates/                 # 文档模板 (18个)
-│   ├── prd.md               # PRD模板
-│   ├── user-story.md        # 用户故事模板
-│   ├── feature-list.md      # 功能清单模板
-│   ├── tech-design.md       # 技术方案模板
-│   ├── architecture-doc.md  # 架构文档模板
-│   ├── db-design.md         # 数据库设计模板
-│   ├── test-plan.md         # 测试计划模板
-│   ├── test-cases.md        # 测试用例模板
-│   ├── test-report.md       # 测试报告模板
-│   ├── deployment.md        # 部署文档模板
-│   ├── security-checklist.md # 安全检查清单
-│   ├── code-review-checklist.md # 代码评审清单
-│   ├── ui-design-spec.md    # UI设计规范 (v2.0)
-│   ├── project-plan.md      # 项目计划 (v2.0)
-│   ├── weekly-report.md     # 周报模板 (v2.0)
-│   ├── risk-management.md   # 风险管理 (v2.0)
-│   ├── change-request.md    # 变更请求 (v2.0)
-│   └── meeting-notes.md     # 会议纪要 (v2.0)
+├── templates/                 # 文档模板（18个）
 ├── package.json              # 插件配置
 ├── settings.json             # 全局设置
 ├── mcp.json                  # MCP工具配置
 └── README.md                 # 说明文档
 ```
 
-## 工作流引擎 (v2.0)
+## 工作流引擎
 
 ### 项目状态管理
 
@@ -171,25 +161,6 @@ ccteam/
 }
 ```
 
-### 阶段控制命令
-
-```bash
-# 开始当前阶段
-/ccteam-stage start
-
-# 完成当前阶段（触发评审门禁）
-/ccteam-stage complete
-
-# 跳过当前阶段（需要权限）
-/ccteam-stage skip --reason "原因说明"
-
-# 回滚到上一阶段
-/ccteam-stage rollback
-
-# 查看当前状态
-/ccteam-stage status
-```
-
 ### 评审门禁
 
 每个阶段完成时自动触发评审，支持三种通过模式：
@@ -197,7 +168,7 @@ ccteam/
 - **majority**: 2/3多数通过
 - **unanimous**: 全票通过
 
-## 智能体协作 (v2.0)
+## 智能体协作
 
 ### 权限矩阵
 
@@ -230,12 +201,10 @@ ccteam/
 ### 阶段1：需求分析
 - 负责角色：产品经理
 - 产出：PRD文档、用户故事、功能清单
-- 技能：analyze-requirement、write-prd、write-user-story
 
 ### 阶段2：技术评审
 - 负责角色：技术负责人、架构师
 - 产出：技术方案、架构文档、技术选型
-- 技能：system-design、tech-selection
 
 ### 阶段3：UI/UX设计
 - 负责角色：UI设计师、UX设计师
@@ -252,12 +221,10 @@ ccteam/
 ### 阶段6-7：前后端开发（并行）
 - 负责角色：前端工程师、后端工程师
 - 产出：前端代码、后端代码
-- 技能：code-implementation、code-review
 
 ### 阶段8：测试
 - 负责角色：QA工程师
 - 产出：测试计划、测试用例、测试报告
-- 技能：test-planning、test-execution
 
 ### 阶段9：部署
 - 负责角色：DevOps工程师
@@ -333,6 +300,11 @@ docs/ccteam/
 
 ## 版本历史
 
+### v2.2.0 (2026-01-30)
+- 新增：commands 目录，支持斜杠命令自动补全
+- 新增：20个快捷命令（/ccteam-pm, /ccteam-fe 等）
+- 改进：安装方式改为通过 /plugin 命令安装
+
 ### v2.1.0 (2026-01-30)
 - 新增：智能体智能度大幅增强（平均63行→350行）
 - 新增：每个角色的标准工作流程
@@ -342,7 +314,7 @@ docs/ccteam/
 - 新增：每个角色的陷阱避坑指南
 - 新增：7个核心技能（API/数据库/部署/安全/UI/UX/文档）
 - 改进：技能库从21个增加到28个
-- 改进：技能文件格式标准化为Anthropic官方SKILL.md格式（YAML frontmatter + references目录）
+- 改进：技能文件格式标准化为Anthropic官方SKILL.md格式
 
 ### v2.0.0 (2026-01-29)
 - 新增：完整工作流引擎（状态机模式）
@@ -368,3 +340,5 @@ MIT License
 ## 贡献
 
 欢迎提交Issue和Pull Request！
+
+GitHub: https://github.com/lelele-cloud/ccteam
