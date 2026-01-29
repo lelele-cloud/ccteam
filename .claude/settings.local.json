@@ -14,7 +14,12 @@
       "Bash(for agent in C:Usersfjl18Desktopccteamagents*/agent.md)",
       "Bash(xargs -I {} sh -c 'echo \"\"=== {} ===\"\"; wc -l \"\"{}\"\"')",
       "Bash(python3:*)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(gh repo create:*)",
+      "Bash(git remote add:*)",
+      "Bash(git push:*)",
+      "Bash(git remote set-url:*)",
+      "Bash(dir:*)"
     ]
   }
 }
