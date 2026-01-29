@@ -16,71 +16,71 @@
     "skills": {
       "directory": "./skills",
       "entry": [
-        "entry/ccteam",
-        "entry/ccteam-new",
-        "entry/ccteam-feature",
-        "entry/ccteam-status",
-        "entry/ccteam-resume",
-        "entry/ccteam-config",
-        "entry/ccteam-stage"
+        "ccteam",
+        "ccteam-new",
+        "ccteam-feature",
+        "ccteam-status",
+        "ccteam-resume",
+        "ccteam-config",
+        "ccteam-stage"
       ],
       "workflow": [
-        "workflow/engine",
-        "workflow/stage-control",
-        "workflow/review-gate"
+        "workflow-engine",
+        "stage-control",
+        "review-gate"
       ],
       "requirements": [
-        "requirements/analyze-requirement",
-        "requirements/write-prd",
-        "requirements/write-user-story"
+        "analyze-requirement",
+        "write-prd",
+        "write-user-story"
       ],
       "architecture": [
-        "architecture/system-design",
-        "architecture/tech-selection"
+        "system-design",
+        "tech-selection"
       ],
       "development": [
-        "development/code-implementation",
-        "development/code-review"
+        "code-implementation",
+        "code-review-skill"
       ],
       "testing": [
-        "testing/test-planning",
-        "testing/test-execution"
+        "test-planning",
+        "test-execution"
       ],
       "api": [
-        "api/api-design"
+        "api-design"
       ],
       "database": [
-        "database/db-design"
+        "db-design"
       ],
       "deployment": [
-        "deployment/deployment"
+        "deployment-skill"
       ],
       "security": [
-        "security/security-audit"
+        "security-audit"
       ],
       "design": [
-        "design/ui-design",
-        "design/ux-design"
+        "ui-design",
+        "ux-design"
       ],
       "documentation": [
-        "documentation/doc-writing"
+        "doc-writing"
       ],
       "agents": [
-        "agents/ccteam-pm",
-        "agents/ccteam-pmo",
-        "agents/ccteam-tl",
-        "agents/ccteam-arch",
-        "agents/ccteam-ui",
-        "agents/ccteam-ux",
-        "agents/ccteam-fe",
-        "agents/ccteam-be",
-        "agents/ccteam-api",
-        "agents/ccteam-qa",
-        "agents/ccteam-ops",
-        "agents/ccteam-dba",
-        "agents/ccteam-sec",
-        "agents/ccteam-doc",
-        "agents/ccteam-cr"
+        "ccteam-pm",
+        "ccteam-pmo",
+        "ccteam-tl",
+        "ccteam-arch",
+        "ccteam-ui",
+        "ccteam-ux",
+        "ccteam-fe",
+        "ccteam-be",
+        "ccteam-api",
+        "ccteam-qa",
+        "ccteam-ops",
+        "ccteam-dba",
+        "ccteam-sec",
+        "ccteam-doc",
+        "ccteam-cr"
       ]
     },
     "schemas": {

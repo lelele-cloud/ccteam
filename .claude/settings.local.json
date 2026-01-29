@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git init)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\ndocs: 添加ccteam插件设计文档\n\n- 定义15个智能体角色（产品、设计、开发、测试、运维）\n- 设计瀑布式10阶段开发流程\n- 规划193个skills（含45个整合现有skills）\n- 配置14个MCP工具\n- 支持Web、移动端、小程序多端开发\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git config:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nfeat: 实现ccteam插件完整功能\n\n- 创建15个专业角色智能体定义\\(agents/\\)\n- 实现6个入口技能和15个角色快捷技能\\(skills/\\)\n- 定义10阶段开发工作流\\(workflows/\\)\n- 创建13个文档模板\\(templates/\\)\n- 配置14个MCP工具集成\\(mcp.json\\)\n- 添加插件配置和全局设置\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nfeat\\(schema\\): add project status JSON Schema definition\n\nAdd comprehensive JSON Schema \\(draft-07\\) for project status management:\n- projectInfo: project metadata and tech stack\n- currentStage: active stage tracking\n- stages: 10-stage workflow with review and parallel execution support\n- team: agent roles, status, and permissions\n- issues: issue tracking with priority and resolution\n- metrics: project progress indicators\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit:*)",
+      "Bash(git status:*)",
+      "Bash(find:*)",
+      "Bash(wc:*)",
+      "Bash(for agent in C:Usersfjl18Desktopccteamagents*/agent.md)",
+      "Bash(xargs -I {} sh -c 'echo \"\"=== {} ===\"\"; wc -l \"\"{}\"\"')",
+      "Bash(python3:*)",
+      "Bash(python:*)"
+    ]
+  }
+}

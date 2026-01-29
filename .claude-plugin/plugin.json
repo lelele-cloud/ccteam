@@ -1,0 +1,12 @@
+{
+  "name": "ccteam",
+  "description": "将Claude Code转变为互联网大厂开发团队 - 15个专业角色智能体，10阶段工作流引擎",
+  "version": "2.1.0",
+  "author": {
+    "name": "fjl18"
+  },
+  "homepage": "https://github.com/fjl18/ccteam",
+  "repository": "https://github.com/fjl18/ccteam",
+  "license": "MIT",
+  "keywords": ["ccteam", "team", "agents", "workflow", "development"]
+}
