@@ -1,6 +1,6 @@
 {
   "name": "ccteam",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "将Claude Code转变为互联网大厂开发团队的智能协作系统",
   "author": "fjl18",
   "license": "MIT",
@@ -8,8 +8,8 @@
     "plugin": {
       "name": "ccteam",
       "displayName": "CCTeam - 互联网大厂开发团队",
-      "description": "15个专业角色智能体，完整工作流引擎，覆盖产品、设计、开发、测试、运维全链路",
-      "version": "2.0.0",
+      "description": "15个高智能度专业角色智能体，完整工作流引擎，覆盖产品、设计、开发、测试、运维全链路",
+      "version": "2.1.0",
       "icon": "🏢",
       "homepage": "https://github.com/fjl18/ccteam"
     },
@@ -45,6 +45,25 @@
       "testing": [
         "testing/test-planning",
         "testing/test-execution"
+      ],
+      "api": [
+        "api/api-design"
+      ],
+      "database": [
+        "database/db-design"
+      ],
+      "deployment": [
+        "deployment/deployment"
+      ],
+      "security": [
+        "security/security-audit"
+      ],
+      "design": [
+        "design/ui-design",
+        "design/ux-design"
+      ],
+      "documentation": [
+        "documentation/doc-writing"
       ],
       "agents": [
         "agents/ccteam-pm",
