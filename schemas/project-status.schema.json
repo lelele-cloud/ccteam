@@ -1,0 +1,671 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://ccteam.dev/schemas/project-status.schema.json",
+  "title": "CCTeam Project Status Schema",
+  "description": "Defines the complete project status structure for CCTeam - transforming Claude Code into a development team",
+  "type": "object",
+  "required": ["projectInfo", "currentStage", "stages", "team", "issues", "metrics"],
+  "properties": {
+    "projectInfo": {
+      "type": "object",
+      "description": "Project basic information",
+      "required": ["name", "type", "createdAt", "updatedAt"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Project name",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "description": {
+          "type": "string",
+          "description": "Project description",
+          "maxLength": 1000
+        },
+        "type": {
+          "type": "string",
+          "description": "Project type",
+          "enum": [
+            "web-app",
+            "mobile-app",
+            "api-service",
+            "cli-tool",
+            "library",
+            "microservice",
+            "monolith",
+            "plugin",
+            "data-pipeline"
+          ]
+        },
+        "techStack": {
+          "type": "object",
+          "description": "Technology stack used in the project",
+          "properties": {
+            "frontend": {
+              "type": "array",
+              "description": "Frontend technologies",
+              "items": {
+                "type": "string"
+              },
+              "examples": [["React", "TypeScript", "Tailwind CSS"]]
+            },
+            "backend": {
+              "type": "array",
+              "description": "Backend technologies",
+              "items": {
+                "type": "string"
+              },
+              "examples": [["Node.js", "Express", "TypeScript"]]
+            },
+            "database": {
+              "type": "array",
+              "description": "Database technologies",
+              "items": {
+                "type": "string"
+              },
+              "examples": [["PostgreSQL", "Redis"]]
+            },
+            "deployment": {
+              "type": "array",
+              "description": "Deployment technologies",
+              "items": {
+                "type": "string"
+              },
+              "examples": [["Docker", "Kubernetes", "AWS"]]
+            }
+          }
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Project creation timestamp"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last update timestamp"
+        }
+      }
+    },
+    "currentStage": {
+      "type": "object",
+      "description": "Current active stage information",
+      "required": ["id", "name", "status"],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Current stage ID (1-10)",
+          "minimum": 1,
+          "maximum": 10
+        },
+        "name": {
+          "type": "string",
+          "description": "Current stage name",
+          "enum": [
+            "requirements",
+            "prd",
+            "architecture",
+            "tech-spec",
+            "development",
+            "code-review",
+            "testing",
+            "security-review",
+            "deployment",
+            "documentation"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "description": "Current stage status",
+          "enum": ["pending", "in-progress", "review", "completed", "rejected", "skipped"]
+        },
+        "startedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Stage start timestamp"
+        },
+        "assignedAgent": {
+          "type": "string",
+          "description": "Agent assigned to current stage",
+          "enum": [
+            "product-manager",
+            "architect",
+            "tech-lead",
+            "senior-developer",
+            "code-reviewer",
+            "qa-engineer",
+            "security-engineer",
+            "devops-engineer",
+            "tech-writer"
+          ]
+        }
+      }
+    },
+    "stages": {
+      "type": "array",
+      "description": "All project stages (10 stages total)",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "displayName", "status"],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Stage ID (1-10)",
+            "minimum": 1,
+            "maximum": 10
+          },
+          "name": {
+            "type": "string",
+            "description": "Stage identifier name",
+            "enum": [
+              "requirements",
+              "prd",
+              "architecture",
+              "tech-spec",
+              "development",
+              "code-review",
+              "testing",
+              "security-review",
+              "deployment",
+              "documentation"
+            ]
+          },
+          "displayName": {
+            "type": "string",
+            "description": "Human-readable stage name",
+            "examples": [
+              "Requirements Analysis",
+              "Product Requirements Document",
+              "System Architecture Design",
+              "Technical Specification",
+              "Development",
+              "Code Review",
+              "Testing & QA",
+              "Security Review",
+              "Deployment",
+              "Documentation"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "description": "Stage status",
+            "enum": ["pending", "in-progress", "review", "completed", "rejected", "skipped"]
+          },
+          "assignedAgents": {
+            "type": "array",
+            "description": "Agents assigned to this stage",
+            "items": {
+              "type": "string",
+              "enum": [
+                "product-manager",
+                "architect",
+                "tech-lead",
+                "senior-developer",
+                "code-reviewer",
+                "qa-engineer",
+                "security-engineer",
+                "devops-engineer",
+                "tech-writer"
+              ]
+            }
+          },
+          "reviewers": {
+            "type": "array",
+            "description": "Agents who can review this stage",
+            "items": {
+              "type": "string",
+              "enum": [
+                "product-manager",
+                "architect",
+                "tech-lead",
+                "senior-developer",
+                "code-reviewer",
+                "qa-engineer",
+                "security-engineer",
+                "devops-engineer",
+                "tech-writer"
+              ]
+            }
+          },
+          "startedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Stage start timestamp"
+          },
+          "completedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Stage completion timestamp"
+          },
+          "outputs": {
+            "type": "array",
+            "description": "Outputs produced by this stage",
+            "items": {
+              "type": "object",
+              "required": ["type", "path"],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "description": "Output type",
+                  "enum": ["document", "code", "config", "artifact", "report"]
+                },
+                "path": {
+                  "type": "string",
+                  "description": "Relative path to the output file"
+                },
+                "description": {
+                  "type": "string",
+                  "description": "Description of the output"
+                },
+                "createdAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "Output creation timestamp"
+                }
+              }
+            }
+          },
+          "reviewResult": {
+            "type": "object",
+            "description": "Review result for this stage",
+            "properties": {
+              "passed": {
+                "type": "boolean",
+                "description": "Whether the review passed"
+              },
+              "reviewedBy": {
+                "type": "array",
+                "description": "Agents who reviewed this stage",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "product-manager",
+                    "architect",
+                    "tech-lead",
+                    "senior-developer",
+                    "code-reviewer",
+                    "qa-engineer",
+                    "security-engineer",
+                    "devops-engineer",
+                    "tech-writer"
+                  ]
+                }
+              },
+              "comments": {
+                "type": "array",
+                "description": "Review comments",
+                "items": {
+                  "type": "object",
+                  "required": ["author", "content", "createdAt"],
+                  "properties": {
+                    "author": {
+                      "type": "string",
+                      "description": "Comment author (agent)"
+                    },
+                    "content": {
+                      "type": "string",
+                      "description": "Comment content"
+                    },
+                    "type": {
+                      "type": "string",
+                      "description": "Comment type",
+                      "enum": ["approval", "suggestion", "concern", "blocker"]
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "description": "Comment timestamp"
+                    }
+                  }
+                }
+              },
+              "reviewedAt": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Review completion timestamp"
+              }
+            }
+          },
+          "parallelWith": {
+            "type": "array",
+            "description": "Stage IDs that can run in parallel with this stage",
+            "items": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 10
+            }
+          },
+          "waitFor": {
+            "type": "array",
+            "description": "Stage IDs that must complete before this stage can start",
+            "items": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 10
+            }
+          }
+        }
+      }
+    },
+    "team": {
+      "type": "object",
+      "description": "Team information and permissions",
+      "required": ["activeAgents", "permissions"],
+      "properties": {
+        "activeAgents": {
+          "type": "array",
+          "description": "Currently active agents in the project",
+          "items": {
+            "type": "object",
+            "required": ["role", "status"],
+            "properties": {
+              "role": {
+                "type": "string",
+                "description": "Agent role",
+                "enum": [
+                  "product-manager",
+                  "architect",
+                  "tech-lead",
+                  "senior-developer",
+                  "code-reviewer",
+                  "qa-engineer",
+                  "security-engineer",
+                  "devops-engineer",
+                  "tech-writer"
+                ]
+              },
+              "status": {
+                "type": "string",
+                "description": "Agent status",
+                "enum": ["active", "idle", "busy", "offline"]
+              },
+              "currentTask": {
+                "type": "string",
+                "description": "Current task the agent is working on"
+              },
+              "joinedAt": {
+                "type": "string",
+                "format": "date-time",
+                "description": "When the agent joined the project"
+              }
+            }
+          }
+        },
+        "permissions": {
+          "type": "object",
+          "description": "Role-based permissions",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "canCreate": {
+                "type": "array",
+                "description": "Stages this role can create outputs for",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "canReview": {
+                "type": "array",
+                "description": "Stages this role can review",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "canApprove": {
+                "type": "array",
+                "description": "Stages this role can approve",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "properties": {
+            "product-manager": {
+              "$ref": "#/definitions/rolePermission"
+            },
+            "architect": {
+              "$ref": "#/definitions/rolePermission"
+            },
+            "tech-lead": {
+              "$ref": "#/definitions/rolePermission"
+            },
+            "senior-developer": {
+              "$ref": "#/definitions/rolePermission"
+            },
+            "code-reviewer": {
+              "$ref": "#/definitions/rolePermission"
+            },
+            "qa-engineer": {
+              "$ref": "#/definitions/rolePermission"
+            },
+            "security-engineer": {
+              "$ref": "#/definitions/rolePermission"
+            },
+            "devops-engineer": {
+              "$ref": "#/definitions/rolePermission"
+            },
+            "tech-writer": {
+              "$ref": "#/definitions/rolePermission"
+            }
+          }
+        }
+      }
+    },
+    "issues": {
+      "type": "array",
+      "description": "Project issues and problems",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "status", "stage", "createdBy", "createdAt"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique issue identifier",
+            "pattern": "^ISS-[0-9]+$"
+          },
+          "title": {
+            "type": "string",
+            "description": "Issue title",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "description": {
+            "type": "string",
+            "description": "Detailed issue description",
+            "maxLength": 2000
+          },
+          "status": {
+            "type": "string",
+            "description": "Issue status",
+            "enum": ["open", "in-progress", "resolved", "closed", "wontfix"]
+          },
+          "priority": {
+            "type": "string",
+            "description": "Issue priority",
+            "enum": ["critical", "high", "medium", "low"]
+          },
+          "stage": {
+            "type": "integer",
+            "description": "Stage ID where the issue was found",
+            "minimum": 1,
+            "maximum": 10
+          },
+          "createdBy": {
+            "type": "string",
+            "description": "Agent who created the issue"
+          },
+          "assignedTo": {
+            "type": "string",
+            "description": "Agent assigned to resolve the issue"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Issue creation timestamp"
+          },
+          "resolvedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Issue resolution timestamp"
+          },
+          "resolution": {
+            "type": "string",
+            "description": "How the issue was resolved",
+            "maxLength": 1000
+          }
+        }
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "description": "Project progress metrics",
+      "required": ["totalStages", "completedStages", "totalIssues", "resolvedIssues", "reviewPassRate"],
+      "properties": {
+        "totalStages": {
+          "type": "integer",
+          "description": "Total number of stages",
+          "const": 10
+        },
+        "completedStages": {
+          "type": "integer",
+          "description": "Number of completed stages",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "totalIssues": {
+          "type": "integer",
+          "description": "Total number of issues",
+          "minimum": 0
+        },
+        "resolvedIssues": {
+          "type": "integer",
+          "description": "Number of resolved issues",
+          "minimum": 0
+        },
+        "reviewPassRate": {
+          "type": "number",
+          "description": "Percentage of reviews that passed on first attempt",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "averageStageTime": {
+          "type": "object",
+          "description": "Average time spent on each stage (in hours)",
+          "additionalProperties": {
+            "type": "number",
+            "minimum": 0
+          }
+        },
+        "lastUpdated": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When metrics were last calculated"
+        }
+      }
+    }
+  },
+  "definitions": {
+    "rolePermission": {
+      "type": "object",
+      "description": "Permission set for a role",
+      "properties": {
+        "canCreate": {
+          "type": "array",
+          "description": "Stages this role can create outputs for",
+          "items": {
+            "type": "string",
+            "enum": [
+              "requirements",
+              "prd",
+              "architecture",
+              "tech-spec",
+              "development",
+              "code-review",
+              "testing",
+              "security-review",
+              "deployment",
+              "documentation"
+            ]
+          }
+        },
+        "canReview": {
+          "type": "array",
+          "description": "Stages this role can review",
+          "items": {
+            "type": "string",
+            "enum": [
+              "requirements",
+              "prd",
+              "architecture",
+              "tech-spec",
+              "development",
+              "code-review",
+              "testing",
+              "security-review",
+              "deployment",
+              "documentation"
+            ]
+          }
+        },
+        "canApprove": {
+          "type": "array",
+          "description": "Stages this role can approve",
+          "items": {
+            "type": "string",
+            "enum": [
+              "requirements",
+              "prd",
+              "architecture",
+              "tech-spec",
+              "development",
+              "code-review",
+              "testing",
+              "security-review",
+              "deployment",
+              "documentation"
+            ]
+          }
+        }
+      }
+    },
+    "agentRole": {
+      "type": "string",
+      "description": "Valid agent roles in CCTeam",
+      "enum": [
+        "product-manager",
+        "architect",
+        "tech-lead",
+        "senior-developer",
+        "code-reviewer",
+        "qa-engineer",
+        "security-engineer",
+        "devops-engineer",
+        "tech-writer"
+      ]
+    },
+    "stageName": {
+      "type": "string",
+      "description": "Valid stage names",
+      "enum": [
+        "requirements",
+        "prd",
+        "architecture",
+        "tech-spec",
+        "development",
+        "code-review",
+        "testing",
+        "security-review",
+        "deployment",
+        "documentation"
+      ]
+    },
+    "stageStatus": {
+      "type": "string",
+      "description": "Valid stage statuses",
+      "enum": ["pending", "in-progress", "review", "completed", "rejected", "skipped"]
+    }
+  }
+}
