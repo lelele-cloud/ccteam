@@ -1,6 +1,6 @@
 {
   "name": "ccteam",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "将Claude Code转变为互联网大厂开发团队的智能协作系统",
   "author": "fjl18",
   "license": "MIT",
@@ -8,8 +8,8 @@
     "plugin": {
       "name": "ccteam",
       "displayName": "CCTeam - 互联网大厂开发团队",
-      "description": "15个专业角色智能体，覆盖产品、设计、开发、测试、运维全链路",
-      "version": "1.0.0",
+      "description": "15个专业角色智能体，完整工作流引擎，覆盖产品、设计、开发、测试、运维全链路",
+      "version": "2.0.0",
       "icon": "🏢",
       "homepage": "https://github.com/fjl18/ccteam"
     },
@@ -21,7 +21,30 @@
         "entry/ccteam-feature",
         "entry/ccteam-status",
         "entry/ccteam-resume",
-        "entry/ccteam-config"
+        "entry/ccteam-config",
+        "entry/ccteam-stage"
+      ],
+      "workflow": [
+        "workflow/engine",
+        "workflow/stage-control",
+        "workflow/review-gate"
+      ],
+      "requirements": [
+        "requirements/analyze-requirement",
+        "requirements/write-prd",
+        "requirements/write-user-story"
+      ],
+      "architecture": [
+        "architecture/system-design",
+        "architecture/tech-selection"
+      ],
+      "development": [
+        "development/code-implementation",
+        "development/code-review"
+      ],
+      "testing": [
+        "testing/test-planning",
+        "testing/test-execution"
       ],
       "agents": [
         "agents/ccteam-pm",
@@ -41,8 +64,15 @@
         "agents/ccteam-cr"
       ]
     },
+    "schemas": {
+      "directory": "./schemas",
+      "projectStatus": "project-status.schema.json"
+    },
     "agents": {
-      "directory": "./agents"
+      "directory": "./agents",
+      "permissions": "permissions.md",
+      "collaboration": "collaboration-rules.md",
+      "scenarios": "scenario-guides/"
     },
     "mcp": {
       "configFile": "./mcp.json"
@@ -61,6 +91,8 @@
     "plugin",
     "team",
     "development",
-    "workflow"
+    "workflow",
+    "agents",
+    "collaboration"
   ]
 }
