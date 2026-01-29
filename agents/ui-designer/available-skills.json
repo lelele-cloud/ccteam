@@ -1,0 +1,36 @@
+{
+  "agent": "ui-designer",
+  "displayName": "UI设计师",
+  "shortcut": "/ccteam-ui",
+  "skills": {
+    "primary": [
+      "design/visual-design",
+      "design/design-system",
+      "design/responsive-design",
+      "design/mobile-design",
+      "design/icon-design",
+      "design/animation-design"
+    ],
+    "secondary": [
+      "design/accessibility",
+      "frontend/css-architecture",
+      "design/design-review"
+    ],
+    "integrated": [
+      "integrated/design/figma",
+      "integrated/design/ui-ux-pro-max",
+      "integrated/design/canvas-design",
+      "integrated/design/brand-guidelines",
+      "integrated/design/theme-factory"
+    ],
+    "review": [
+      "workflow/review-gate"
+    ]
+  },
+  "mcpTools": [
+    "figma",
+    "notion",
+    "playwright",
+    "fetch"
+  ]
+}

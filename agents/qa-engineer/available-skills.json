@@ -1,0 +1,45 @@
+{
+  "agent": "qa-engineer",
+  "displayName": "测试工程师",
+  "shortcut": "/ccteam-qa",
+  "skills": {
+    "primary": [
+      "testing/test-plan",
+      "testing/test-case-design",
+      "testing/unit-test",
+      "testing/integration-test",
+      "testing/e2e-test",
+      "testing/performance-test",
+      "testing/stress-test",
+      "testing/security-test",
+      "testing/regression-test",
+      "testing/test-automation",
+      "testing/bug-report"
+    ],
+    "secondary": [
+      "api/api-test",
+      "security/vulnerability-scan",
+      "code-quality/code-review"
+    ],
+    "integrated": [
+      "integrated/testing/webapp-testing",
+      "integrated/superpowers/systematic-debugging",
+      "integrated/superpowers/test-driven-development"
+    ],
+    "review": [
+      "testing/test-review"
+    ]
+  },
+  "mcpTools": [
+    "playwright",
+    "fetch",
+    "docker",
+    "sentry",
+    "github",
+    "sqlite",
+    "postgres",
+    "mysql",
+    "redis",
+    "openapi"
+  ]
+}

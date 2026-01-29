@@ -1,0 +1,39 @@
+{
+  "agent": "project-manager",
+  "displayName": "项目经理",
+  "shortcut": "/ccteam-pmo",
+  "skills": {
+    "primary": [
+      "workflow/start-stage",
+      "workflow/complete-stage",
+      "workflow/skip-stage",
+      "workflow/rollback-stage",
+      "workflow/parallel-tasks",
+      "utils/estimation",
+      "utils/risk-assessment"
+    ],
+    "secondary": [
+      "utils/meeting-notes",
+      "utils/git-workflow",
+      "utils/branch-strategy",
+      "documentation/tech-doc"
+    ],
+    "integrated": [
+      "integrated/superpowers/writing-plans",
+      "integrated/superpowers/executing-plans",
+      "integrated/superpowers/dispatching-parallel-agents",
+      "integrated/development/github",
+      "integrated/communication/internal-comms"
+    ],
+    "review": [
+      "workflow/review-gate"
+    ]
+  },
+  "mcpTools": [
+    "github",
+    "gitlab",
+    "notion",
+    "slack",
+    "sentry"
+  ]
+}

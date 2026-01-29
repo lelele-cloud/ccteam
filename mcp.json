@@ -1,0 +1,117 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-server-playwright"],
+      "description": "浏览器自动化、UI测试、截图",
+      "enabledForAgents": ["qa-engineer", "frontend-engineer", "ux-designer", "security-engineer"]
+    },
+    "sqlite": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-server-sqlite", "--db-path", "./data/dev.db"],
+      "description": "SQLite数据库操作",
+      "enabledForAgents": ["dba", "backend-engineer", "api-engineer", "qa-engineer"]
+    },
+    "postgres": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-server-postgres"],
+      "env": {
+        "POSTGRES_CONNECTION_STRING": "${POSTGRES_URL}"
+      },
+      "description": "PostgreSQL数据库操作",
+      "enabledForAgents": ["dba", "backend-engineer", "architect", "qa-engineer"]
+    },
+    "mysql": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-server-mysql"],
+      "env": {
+        "MYSQL_CONNECTION_STRING": "${MYSQL_URL}"
+      },
+      "description": "MySQL数据库操作",
+      "enabledForAgents": ["dba", "backend-engineer", "architect"]
+    },
+    "redis": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-server-redis"],
+      "env": {
+        "REDIS_URL": "${REDIS_URL}"
+      },
+      "description": "Redis缓存操作",
+      "enabledForAgents": ["backend-engineer", "architect", "api-engineer", "devops-engineer"]
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-server-github"],
+      "env": {
+        "GITHUB_TOKEN": "${GITHUB_TOKEN}"
+      },
+      "description": "GitHub PR/Issue/Actions管理",
+      "enabledForAgents": ["project-manager", "code-reviewer", "tech-lead", "devops-engineer", "frontend-engineer", "backend-engineer", "api-engineer"]
+    },
+    "gitlab": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-server-gitlab"],
+      "env": {
+        "GITLAB_TOKEN": "${GITLAB_TOKEN}",
+        "GITLAB_URL": "${GITLAB_URL}"
+      },
+      "description": "GitLab仓库操作",
+      "enabledForAgents": ["project-manager", "devops-engineer", "tech-lead"]
+    },
+    "figma": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-server-figma"],
+      "env": {
+        "FIGMA_ACCESS_TOKEN": "${FIGMA_TOKEN}"
+      },
+      "description": "Figma设计稿读取与解析",
+      "enabledForAgents": ["ui-designer", "ux-designer", "frontend-engineer", "doc-engineer"]
+    },
+    "fetch": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-server-fetch"],
+      "description": "HTTP请求、API测试",
+      "enabledForAgents": ["api-engineer", "qa-engineer", "backend-engineer", "frontend-engineer", "security-engineer", "product-manager"]
+    },
+    "docker": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-server-docker"],
+      "description": "Docker容器管理与部署",
+      "enabledForAgents": ["devops-engineer", "architect", "backend-engineer", "qa-engineer"]
+    },
+    "sentry": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-server-sentry"],
+      "env": {
+        "SENTRY_AUTH_TOKEN": "${SENTRY_TOKEN}",
+        "SENTRY_ORG": "${SENTRY_ORG}"
+      },
+      "description": "Sentry错误监控与追踪",
+      "enabledForAgents": ["devops-engineer", "backend-engineer", "frontend-engineer", "qa-engineer"]
+    },
+    "notion": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-server-notion"],
+      "env": {
+        "NOTION_API_KEY": "${NOTION_TOKEN}"
+      },
+      "description": "Notion文档协作与管理",
+      "enabledForAgents": ["product-manager", "doc-engineer", "project-manager"]
+    },
+    "slack": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-server-slack"],
+      "env": {
+        "SLACK_BOT_TOKEN": "${SLACK_TOKEN}"
+      },
+      "description": "Slack团队通知与沟通",
+      "enabledForAgents": ["project-manager", "devops-engineer"]
+    },
+    "openapi": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-server-openapi"],
+      "description": "OpenAPI文档解析与生成",
+      "enabledForAgents": ["api-engineer", "doc-engineer", "frontend-engineer", "backend-engineer"]
+    }
+  }
+}

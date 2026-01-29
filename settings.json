@@ -1,0 +1,70 @@
+{
+  "ccteam": {
+    "language": {
+      "documentation": "zh-CN",
+      "code": "en",
+      "comments": "zh-CN"
+    },
+    "projectType": {
+      "default": "web-fullstack",
+      "available": [
+        "web-fullstack",
+        "web-frontend",
+        "web-backend",
+        "mobile-react-native",
+        "mobile-flutter",
+        "miniprogram-wechat",
+        "miniprogram-alipay",
+        "cross-platform"
+      ]
+    },
+    "techStack": {
+      "frontend": {
+        "framework": ["react", "vue3", "nextjs", "nuxtjs"],
+        "styling": ["tailwind", "css-modules", "styled-components"],
+        "stateManagement": ["zustand", "redux-toolkit", "pinia"],
+        "language": "typescript"
+      },
+      "backend": {
+        "framework": ["nodejs-express", "nodejs-nestjs", "python-fastapi", "go-gin", "java-springboot"],
+        "orm": ["prisma", "typeorm", "sqlalchemy", "gorm"],
+        "language": ["typescript", "python", "go", "java"]
+      },
+      "mobile": {
+        "framework": ["react-native", "flutter"],
+        "language": ["typescript", "dart"]
+      },
+      "database": {
+        "relational": ["postgresql", "mysql"],
+        "cache": ["redis"],
+        "document": ["mongodb"]
+      }
+    },
+    "workflow": {
+      "autoTransition": true,
+      "requireReview": true,
+      "parallelDevelopment": true,
+      "stages": {
+        "skippable": ["ui-ux-design", "database-design"],
+        "required": ["requirements", "tech-review", "testing", "deployment"]
+      }
+    },
+    "output": {
+      "directory": "docs/ccteam",
+      "structure": {
+        "requirements": "01-requirements",
+        "architecture": "02-architecture",
+        "design": "03-design",
+        "database": "04-database",
+        "api": "05-api",
+        "test": "06-test",
+        "deployment": "07-deployment"
+      }
+    },
+    "review": {
+      "autoReview": true,
+      "checklistRequired": true,
+      "minApprovals": 1
+    }
+  }
+}

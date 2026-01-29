@@ -1,0 +1,44 @@
+{
+  "agent": "devops-engineer",
+  "displayName": "DevOps工程师",
+  "shortcut": "/ccteam-ops",
+  "skills": {
+    "primary": [
+      "devops/ci-setup",
+      "devops/cd-setup",
+      "devops/docker-build",
+      "devops/docker-compose",
+      "devops/nginx-config",
+      "devops/ssl-setup",
+      "devops/env-management",
+      "devops/log-aggregation",
+      "devops/monitoring-setup",
+      "devops/alerting",
+      "devops/rollback"
+    ],
+    "secondary": [
+      "database/backup-strategy",
+      "security/security-headers",
+      "utils/git-workflow"
+    ],
+    "integrated": [
+      "integrated/deployment/vercel",
+      "integrated/deployment/supabase",
+      "integrated/superpowers/finishing-a-development-branch",
+      "integrated/development/github"
+    ],
+    "review": [
+      "devops/devops-review"
+    ]
+  },
+  "mcpTools": [
+    "docker",
+    "github",
+    "gitlab",
+    "sentry",
+    "postgres",
+    "mysql",
+    "redis",
+    "slack"
+  ]
+}

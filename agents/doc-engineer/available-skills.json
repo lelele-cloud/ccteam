@@ -1,0 +1,38 @@
+{
+  "agent": "doc-engineer",
+  "displayName": "技术文档工程师",
+  "shortcut": "/ccteam-doc",
+  "skills": {
+    "primary": [
+      "documentation/tech-doc",
+      "documentation/api-doc",
+      "documentation/user-manual",
+      "documentation/deployment-doc",
+      "documentation/changelog",
+      "documentation/readme-gen",
+      "documentation/architecture-doc",
+      "documentation/runbook"
+    ],
+    "secondary": [
+      "api/api-doc-gen",
+      "utils/handover"
+    ],
+    "integrated": [
+      "integrated/document/docx",
+      "integrated/document/pdf",
+      "integrated/document/pptx",
+      "integrated/document/xlsx",
+      "integrated/document/doc-coauthoring"
+    ],
+    "review": [
+      "documentation/doc-review"
+    ]
+  },
+  "mcpTools": [
+    "notion",
+    "github",
+    "gitlab",
+    "openapi",
+    "figma"
+  ]
+}

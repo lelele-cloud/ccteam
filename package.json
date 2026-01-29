@@ -1,0 +1,66 @@
+{
+  "name": "ccteam",
+  "version": "1.0.0",
+  "description": "将Claude Code转变为互联网大厂开发团队的智能协作系统",
+  "author": "fjl18",
+  "license": "MIT",
+  "claude": {
+    "plugin": {
+      "name": "ccteam",
+      "displayName": "CCTeam - 互联网大厂开发团队",
+      "description": "15个专业角色智能体，覆盖产品、设计、开发、测试、运维全链路",
+      "version": "1.0.0",
+      "icon": "🏢",
+      "homepage": "https://github.com/fjl18/ccteam"
+    },
+    "skills": {
+      "directory": "./skills",
+      "entry": [
+        "entry/ccteam",
+        "entry/ccteam-new",
+        "entry/ccteam-feature",
+        "entry/ccteam-status",
+        "entry/ccteam-resume",
+        "entry/ccteam-config"
+      ],
+      "agents": [
+        "agents/ccteam-pm",
+        "agents/ccteam-pmo",
+        "agents/ccteam-tl",
+        "agents/ccteam-arch",
+        "agents/ccteam-ui",
+        "agents/ccteam-ux",
+        "agents/ccteam-fe",
+        "agents/ccteam-be",
+        "agents/ccteam-api",
+        "agents/ccteam-qa",
+        "agents/ccteam-ops",
+        "agents/ccteam-dba",
+        "agents/ccteam-sec",
+        "agents/ccteam-doc",
+        "agents/ccteam-cr"
+      ]
+    },
+    "agents": {
+      "directory": "./agents"
+    },
+    "mcp": {
+      "configFile": "./mcp.json"
+    },
+    "dependencies": {
+      "plugins": [
+        "superpowers",
+        "document-skills",
+        "github",
+        "figma"
+      ]
+    }
+  },
+  "keywords": [
+    "claude-code",
+    "plugin",
+    "team",
+    "development",
+    "workflow"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "agent": "backend-engineer",
+  "displayName": "后端工程师",
+  "shortcut": "/ccteam-be",
+  "skills": {
+    "primary": [
+      "backend/nodejs-dev",
+      "backend/python-dev",
+      "backend/go-dev",
+      "backend/java-dev",
+      "backend/service-design",
+      "backend/orm-usage",
+      "backend/authentication",
+      "backend/file-upload",
+      "backend/async-task",
+      "backend/logging",
+      "backend/error-handling"
+    ],
+    "secondary": [
+      "database/table-design",
+      "database/sql-optimize",
+      "api/restful-design",
+      "testing/unit-test",
+      "testing/integration-test",
+      "security/auth-security"
+    ],
+    "integrated": [
+      "integrated/deployment/supabase",
+      "integrated/payment/stripe-best-practices",
+      "integrated/mcp/mcp-builder"
+    ],
+    "review": [
+      "backend/backend-review"
+    ]
+  },
+  "mcpTools": [
+    "sqlite",
+    "postgres",
+    "mysql",
+    "redis",
+    "docker",
+    "github",
+    "gitlab",
+    "fetch",
+    "openapi",
+    "sentry"
+  ]
+}

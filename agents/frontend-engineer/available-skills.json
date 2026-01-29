@@ -1,0 +1,47 @@
+{
+  "agent": "frontend-engineer",
+  "displayName": "前端工程师",
+  "shortcut": "/ccteam-fe",
+  "skills": {
+    "primary": [
+      "frontend/react-dev",
+      "frontend/vue-dev",
+      "frontend/nextjs-dev",
+      "frontend/react-native-dev",
+      "frontend/flutter-dev",
+      "frontend/miniprogram-dev",
+      "frontend/component-dev",
+      "frontend/state-management",
+      "frontend/frontend-performance",
+      "frontend/bundler-config",
+      "frontend/css-architecture"
+    ],
+    "secondary": [
+      "testing/unit-test",
+      "testing/e2e-test",
+      "api/api-mock",
+      "code-quality/code-style",
+      "code-quality/code-review"
+    ],
+    "integrated": [
+      "integrated/design/frontend-design",
+      "integrated/design/figma",
+      "integrated/testing/webapp-testing",
+      "integrated/development/typescript-lsp",
+      "integrated/deployment/vercel"
+    ],
+    "review": [
+      "frontend/frontend-review"
+    ]
+  },
+  "mcpTools": [
+    "playwright",
+    "figma",
+    "github",
+    "gitlab",
+    "fetch",
+    "docker",
+    "openapi",
+    "redis"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "agent": "code-reviewer",
+  "displayName": "代码审查员",
+  "shortcut": "/ccteam-cr",
+  "skills": {
+    "primary": [
+      "code-quality/code-review",
+      "code-quality/code-style",
+      "code-quality/code-smell",
+      "code-quality/refactoring",
+      "code-quality/complexity-analysis",
+      "code-quality/dependency-check",
+      "code-quality/dead-code",
+      "code-quality/naming-convention",
+      "code-quality/best-practices"
+    ],
+    "secondary": [
+      "security/security-audit",
+      "testing/unit-test",
+      "frontend/frontend-review",
+      "backend/backend-review",
+      "api/api-review"
+    ],
+    "integrated": [
+      "integrated/development/code-review",
+      "integrated/development/pr-review-toolkit",
+      "integrated/superpowers/requesting-code-review",
+      "integrated/superpowers/receiving-code-review",
+      "integrated/development/code-simplifier"
+    ],
+    "review": [
+      "workflow/review-gate"
+    ]
+  },
+  "mcpTools": [
+    "github",
+    "gitlab",
+    "fetch",
+    "openapi",
+    "docker",
+    "sentry"
+  ]
+}

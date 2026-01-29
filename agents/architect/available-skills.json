@@ -1,0 +1,45 @@
+{
+  "agent": "architect",
+  "displayName": "系统架构师",
+  "shortcut": "/ccteam-arch",
+  "skills": {
+    "primary": [
+      "architecture/system-design",
+      "architecture/tech-selection",
+      "architecture/microservice-design",
+      "architecture/database-arch",
+      "architecture/cache-strategy",
+      "architecture/message-queue",
+      "architecture/api-gateway",
+      "architecture/high-availability",
+      "architecture/scalability",
+      "architecture/architecture-review"
+    ],
+    "secondary": [
+      "database/er-design",
+      "api/restful-design",
+      "api/graphql-design",
+      "security/security-audit",
+      "devops/docker-build"
+    ],
+    "integrated": [
+      "integrated/superpowers/writing-plans",
+      "integrated/meta/cto",
+      "integrated/mcp/mcp-builder",
+      "integrated/deployment/supabase"
+    ],
+    "review": [
+      "workflow/review-gate"
+    ]
+  },
+  "mcpTools": [
+    "github",
+    "docker",
+    "redis",
+    "postgres",
+    "mysql",
+    "sqlite",
+    "fetch",
+    "openapi"
+  ]
+}

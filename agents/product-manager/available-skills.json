@@ -1,0 +1,40 @@
+{
+  "agent": "product-manager",
+  "displayName": "产品经理",
+  "shortcut": "/ccteam-pm",
+  "skills": {
+    "primary": [
+      "requirements/analyze-requirement",
+      "requirements/write-prd",
+      "requirements/user-story",
+      "requirements/feature-breakdown",
+      "requirements/priority-matrix",
+      "requirements/competitor-analysis",
+      "requirements/requirement-review"
+    ],
+    "secondary": [
+      "design/design-review",
+      "documentation/tech-doc",
+      "utils/meeting-notes",
+      "utils/estimation",
+      "utils/risk-assessment"
+    ],
+    "integrated": [
+      "integrated/superpowers/brainstorming",
+      "integrated/document/doc-coauthoring",
+      "integrated/communication/internal-comms",
+      "integrated/meta/cto"
+    ],
+    "review": [
+      "workflow/review-gate"
+    ]
+  },
+  "mcpTools": [
+    "notion",
+    "github",
+    "gitlab",
+    "figma",
+    "fetch",
+    "slack"
+  ]
+}

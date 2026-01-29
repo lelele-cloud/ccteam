@@ -1,0 +1,36 @@
+{
+  "agent": "dba",
+  "displayName": "DBA",
+  "shortcut": "/ccteam-dba",
+  "skills": {
+    "primary": [
+      "database/er-design",
+      "database/table-design",
+      "database/index-design",
+      "database/sql-optimize",
+      "database/data-migration",
+      "database/backup-strategy",
+      "database/sharding"
+    ],
+    "secondary": [
+      "architecture/database-arch",
+      "backend/orm-usage",
+      "security/data-encryption"
+    ],
+    "integrated": [
+      "integrated/deployment/supabase"
+    ],
+    "review": [
+      "database/database-review"
+    ]
+  },
+  "mcpTools": [
+    "sqlite",
+    "postgres",
+    "mysql",
+    "redis",
+    "docker",
+    "github",
+    "gitlab"
+  ]
+}

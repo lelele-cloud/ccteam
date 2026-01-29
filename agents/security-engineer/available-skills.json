@@ -1,0 +1,40 @@
+{
+  "agent": "security-engineer",
+  "displayName": "安全工程师",
+  "shortcut": "/ccteam-sec",
+  "skills": {
+    "primary": [
+      "security/security-audit",
+      "security/vulnerability-scan",
+      "security/owasp-check",
+      "security/xss-prevention",
+      "security/sql-injection",
+      "security/csrf-prevention",
+      "security/auth-security",
+      "security/data-encryption",
+      "security/sensitive-data",
+      "security/security-headers"
+    ],
+    "secondary": [
+      "testing/security-test",
+      "code-quality/code-review",
+      "backend/authentication"
+    ],
+    "integrated": [
+      "integrated/superpowers/systematic-debugging"
+    ],
+    "review": [
+      "security/security-review"
+    ]
+  },
+  "mcpTools": [
+    "fetch",
+    "playwright",
+    "github",
+    "gitlab",
+    "docker",
+    "postgres",
+    "mysql",
+    "sentry"
+  ]
+}

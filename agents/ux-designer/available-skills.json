@@ -1,0 +1,35 @@
+{
+  "agent": "ux-designer",
+  "displayName": "UX设计师",
+  "shortcut": "/ccteam-ux",
+  "skills": {
+    "primary": [
+      "design/interaction-design",
+      "design/prototype",
+      "design/usability-review",
+      "design/accessibility",
+      "design/animation-design"
+    ],
+    "secondary": [
+      "design/visual-design",
+      "design/mobile-design",
+      "design/responsive-design",
+      "design/design-review"
+    ],
+    "integrated": [
+      "integrated/design/figma",
+      "integrated/design/ui-ux-pro-max",
+      "integrated/design/frontend-design",
+      "integrated/design/web-artifacts-builder"
+    ],
+    "review": [
+      "workflow/review-gate"
+    ]
+  },
+  "mcpTools": [
+    "figma",
+    "notion",
+    "playwright",
+    "fetch"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "agent": "tech-lead",
+  "displayName": "技术负责人",
+  "shortcut": "/ccteam-tl",
+  "skills": {
+    "primary": [
+      "architecture/tech-review",
+      "architecture/tech-selection",
+      "code-quality/code-review",
+      "code-quality/code-style",
+      "code-quality/best-practices",
+      "workflow/review-gate"
+    ],
+    "secondary": [
+      "architecture/system-design",
+      "architecture/high-availability",
+      "testing/unit-test",
+      "testing/integration-test",
+      "security/security-audit",
+      "utils/git-workflow"
+    ],
+    "integrated": [
+      "integrated/superpowers/writing-plans",
+      "integrated/superpowers/requesting-code-review",
+      "integrated/superpowers/receiving-code-review",
+      "integrated/development/code-review",
+      "integrated/development/pr-review-toolkit",
+      "integrated/meta/cto"
+    ],
+    "review": [
+      "requirements/requirement-review",
+      "architecture/architecture-review",
+      "frontend/frontend-review",
+      "backend/backend-review"
+    ]
+  },
+  "mcpTools": [
+    "github",
+    "gitlab",
+    "docker",
+    "redis",
+    "sentry",
+    "fetch",
+    "openapi"
+  ]
+}

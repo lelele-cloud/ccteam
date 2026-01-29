@@ -1,0 +1,44 @@
+{
+  "agent": "api-engineer",
+  "displayName": "API工程师",
+  "shortcut": "/ccteam-api",
+  "skills": {
+    "primary": [
+      "api/restful-design",
+      "api/graphql-design",
+      "api/grpc-design",
+      "api/websocket-design",
+      "api/api-versioning",
+      "api/api-doc-gen",
+      "api/api-mock",
+      "api/api-test",
+      "api/api-review"
+    ],
+    "secondary": [
+      "backend/authentication",
+      "backend/error-handling",
+      "database/table-design",
+      "security/auth-security",
+      "documentation/api-doc"
+    ],
+    "integrated": [
+      "integrated/mcp/mcp-builder",
+      "integrated/deployment/supabase",
+      "integrated/development/context7"
+    ],
+    "review": [
+      "workflow/review-gate"
+    ]
+  },
+  "mcpTools": [
+    "fetch",
+    "openapi",
+    "postgres",
+    "mysql",
+    "sqlite",
+    "redis",
+    "github",
+    "gitlab",
+    "docker"
+  ]
+}
